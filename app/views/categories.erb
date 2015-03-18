@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title>bizarre bazaar: we sell all things</title>
+  </head>
+  <body>
+    <ul>
+      <% categories.each do |category| %>
+        <li><a href="/categories/<%= category.id %>"><%= category.title %></a></li>
+      <% end %>
+    </ul>
+  </body>
+</html>
+
