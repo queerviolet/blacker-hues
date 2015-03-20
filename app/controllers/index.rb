@@ -16,8 +16,9 @@ end
 
 delete '/things/:id/tags/:tag_id' do
   thing = Thing.find(params[:id])
-  thing.tags.destroy(thing.tags.find(params[:tag_id]))
-  #redirect "/things/#{params[:id]}"
-  puts back
+  return [404, 'thing not found'] unless thing
+  tag = thing.tags.find(params[:tag_id])
+  return [400, 'no such tag'] unless tag
+  thing.tags.destroy(tag)
   redirect back
 end
