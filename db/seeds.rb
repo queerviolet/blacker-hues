@@ -71,3 +71,6 @@
   },
 ].each { |thing| Thing.create!(thing) }
 
+require_relative 'phikal'
+
+PHIKAL.each { |potion| Thing.create!(potion) }
