@@ -124,7 +124,7 @@ namespace :db do
   end
 
   desc "Does db:drop db:create db:migrate db:seed"
-  task :nuke do
+  task :reset do
     unless ENV['RACK_ENV'] == 'production'
       ['db:drop', 'db:create', 'db:migrate', 'db:seed'].each do |step|
         system("bundle exec rake #{step}")

@@ -1,5 +1,7 @@
 class Thing < ActiveRecord::Base
   belongs_to :category
+  has_many :tag_things
+  has_many :tags, through: :tag_things
 
   before_save :generate_token
 
