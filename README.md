@@ -1,3 +1,3 @@
-# the bizarre bazaar #
+# rock paper scissors
 
-We sell everything.
+The only winning move is not to play.
