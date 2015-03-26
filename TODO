@@ -1,4 +1,9 @@
-[X] Tags
-[ ] Creating (things)
-[ ] Editing (things)
-[X] Deleting (tags)
+[X] data schema
+  - users
+  - tokens
+  - games
+[X] migrations: users, tokens, games
+[ ] models: User, Token, Game
+[ ] controllers
+[ ] views
+[ ] talk on: activerecord has_many / belongs_to relationships
