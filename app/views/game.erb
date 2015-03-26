@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>rps</title>
+    <%
+      player_1_name = ""
+      player_2_name = ""
+      if game.player_1
+        player_1_name = game.player_1.name
+      end
+      if game.player_2
+        player_2_name = game.player_2.name
+      end
+    %>
+  </head>
+  <body>
+    <form action="/games/<%= game.id %>/player_1_name" method="post">
+      <input type="hidden" name="_method" value="put">
+      <input type="text" name="player_1_name" value="<%= player_1_name %>">
+      <input type="submit">
+    </form>
+    <% unless game.player_1_throw %>
+      <% tokens.each do |token| %>
+        <form action="/games/<%= game.id %>/player_1_throw_id" method="post">
+          <input type="hidden" name="_method" value="put">
+          <input type="hidden" name="player_1_throw_id" value="<%= token.id %>">
+          <input type="submit" value="<%= token.name %>">
+        </form>      
+      <% end %>
+    <% end %>
+
+    <form action="/games/<%= game.id %>/player_2_name" method="post">
+      <input type="hidden" name="_method" value="put">
+      <input type="text" name="player_2_name" value="<%= player_2_name %>">
+      <input type="submit">
+    </form>
+    <% unless game.player_2_throw %>
+      <% tokens.each do |token| %>
+        <form action="/games/<%= game.id %>/player_2_throw_id" method="post">
+          <input type="hidden" name="_method" value="put">
+          <input type="hidden" name="player_2_throw_id" value="<%= token.id %>">
+          <input type="submit" value="<%= token.name %>">
+        </form>      
+      <% end %>
+    <% end %>
+
+    <% if game.complete? %>
+      <% if game.winner %>
+        <%= game.winner.name %> wins!
+      <% else %>
+        draw.
+      <% end %>
+    <% end %>
+  </body>
+</html>

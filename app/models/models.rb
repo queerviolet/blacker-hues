@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :games
+  has_many :tokens, through: :games
 end
 
 class Token < ActiveRecord::Base
@@ -25,5 +27,9 @@ class Game < ActiveRecord::Base
     return player_1 if player_1_throw.beats(player_2_throw)
     return player_2 if player_2_throw.beats(player_1_throw)
     nil
+  end
+
+  def complete?
+    player_1_throw and player_2_throw
   end
 end
