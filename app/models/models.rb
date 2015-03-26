@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :games
-  has_many :tokens, through: :games
 end
 
 class Token < ActiveRecord::Base
