@@ -29,30 +29,33 @@ body {
 }
 
 .edit-post {
-  min-width: 10em;
+  position: relative;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .edit-post-content {
-  min-height: 2em;
-  margin: 0; border: 0; padding: 0;
-}
+  background: #222;
+  color: white;
 
-.edit-post-content {
+  margin: 0; border: 0; padding: 0.5em;
   outline: none;
+  width: 98%;
+  width: calc(100% - 1em);
+  height: 1em;
 }
 
 .edit-post-submit {
-  display: none;
   border: none;
-  height: 2em;
-  margin: 0; padding: 0;
   -webkit-appearance: none;
+
+  display: block;
+  margin-left: auto;
+  background: none;
+  color: white;
 }
 
-.edit-post-content:focus + .edit-post-submit {
-  display: block;
-}
-
-.edit-post-submit:hover, .edit_post_submit:focus {
-  display: block;
+.edit-post-submit:hover, .edit-post-submit:focus {
+  background: red;
+  outline: none;
 }

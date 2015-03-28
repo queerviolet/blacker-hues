@@ -14,5 +14,5 @@
       placeholder='tell me your foolish lies'
     <% end %>
   ><%= post.try(:content) %></textarea>
-  <input type=submit class=edit-post-submit value=save>
+  <input type=submit class=edit-post-submit value=<%= if parent then 'reply' else 'save' end %>>
 </form>
