@@ -3,8 +3,9 @@ body {
   color: white;
 }
 
+/* This selects any .post which has a .post as its previous sibling. */
 .post + .post {
-  margin-top: 2em;
+  margin-top: 2em;   /* Put space between successive posts. */
 }
 
 .post-replies {
