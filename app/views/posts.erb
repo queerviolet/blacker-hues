@@ -1,0 +1,10 @@
+<% posts.each do |post| %>
+  <div class="post">
+    <div class="post-content">
+      <%= post.content %>
+    </div>
+    <div class="post-replies">
+      <%= erb(:posts, locals: {posts: post.children}) %>
+    </div>
+  </div>
+<% end %>
