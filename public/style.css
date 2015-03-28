@@ -1,0 +1,12 @@
+body {
+  background: black;
+  color: white;
+}
+
+.post + .post {
+  margin-top: 2em;
+}
+
+.post-replies {
+  padding-left: 2em;
+}
