@@ -28,17 +28,21 @@
 #    by lotus rose
 # http://loteyrose.com/IAMSOGOTH.htm
 
-# hmm.... how to process this seed data?
-
+# create_posts processes the seed data I copied out of that web page.
 def create_posts(str)
   reply_regex = /^goth #\d: /  
+  # The text is made of blocks separated by three newlines.
   str.split("\n\n\n").each do |conversation|
     conversation.strip!
     next unless conversation != ""
+    # Most blocks have just one line, but some have a little conversation.
     thread = conversation.split("\n")
     parent = nil
     thread.each do |reply|
+      # remove "goth #1:" and such from the beginning of the line
       reply.sub!(reply_regex, '')
+      # When we have a conversation, we'll thread the replies, so our seed
+      # data has some threads
       parent = Post.create!(content: reply, user: User.all.sample, parent: parent)
     end
   end
