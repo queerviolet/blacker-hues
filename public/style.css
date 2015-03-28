@@ -8,6 +8,18 @@ body {
   margin-top: 2em;   /* Put space between successive posts. */
 }
 
+.post-replies > .post {
+  margin-top: 0.5em;
+}
+
 .post-replies {
   padding-left: 2em;
+}
+
+.post-author {
+  color: darkgray;
+}
+
+.post-author:before {
+  content: '—';
 }
