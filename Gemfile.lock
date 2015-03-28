@@ -16,6 +16,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     backports (3.6.4)
+    bcrypt (3.1.10)
     builder (3.2.2)
     daemons (1.2.1)
     diff-lcs (1.2.5)
@@ -76,6 +77,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
+  bcrypt
   faker
   haml
   pg

@@ -3,6 +3,10 @@ body {
   color: white;
 }
 
+.post {
+  max-width: 26em;
+}
+
 /* This selects any .post which has a .post as its previous sibling. */
 .post + .post {
   margin-top: 2em;   /* Put space between successive posts. */
@@ -22,4 +26,33 @@ body {
 
 .post-author:before {
   content: '—';
+}
+
+.edit-post {
+  min-width: 10em;
+}
+
+.edit-post-content {
+  min-height: 2em;
+  margin: 0; border: 0; padding: 0;
+}
+
+.edit-post-content {
+  outline: none;
+}
+
+.edit-post-submit {
+  display: none;
+  border: none;
+  height: 2em;
+  margin: 0; padding: 0;
+  -webkit-appearance: none;
+}
+
+.edit-post-content:focus + .edit-post-submit {
+  display: block;
+}
+
+.edit-post-submit:hover, .edit_post_submit:focus {
+  display: block;
 }

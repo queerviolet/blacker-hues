@@ -19,6 +19,7 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'haml'
+gem 'bcrypt'
 
 group :test do
   gem 'faker'
