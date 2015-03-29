@@ -3,9 +3,9 @@ get '/posts/new' do
 end
 
 get '/posts/:id' do
-  posts = Post.where(id: params[:id])
-  return [404, 'post not found'] unless posts.length > 0
-  erb(:'posts/index', locals: {posts: posts})
+  post = Post.where(id: params[:id])
+  return [404, 'post not found'] unless post
+  erb(:'posts/post', locals: {post: post})
 end
 
 get '/posts/:id/edit' do

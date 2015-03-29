@@ -1,12 +1,6 @@
-<% posts.order(:created_at).each do |post| %>
-  <div class=post>
-    <div class=post-content>
-      <%= post.content %>
-    </div>
-    <%= erb(:'users/cite', locals: {user: post.user, cssClass: 'post-author'}) %>
-    <div class=post-replies>
-      <%= erb(:'posts/index', locals: {posts: post.children}) %>
-      <%= erb(:'posts/edit', locals: {parent: post, post: nil}) %>
-    </div>
-  </div>
-<% end %>
+<div class=posts>
+  <% posts.order(:created_at).each do |post| %>
+    <%= erb(:'posts/post', locals: {post: post}) %>
+  <% end %>
+  <%= erb(:'posts/edit', locals: {parent: nil, post: nil}) %>
+</div>
