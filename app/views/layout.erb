@@ -3,8 +3,29 @@
   <head>
     <title>blacker hues</title>
     <link rel=stylesheet href='/style.css'>
+    <noscript>
+      <style>
+        body { background: fuchsia; }
+      </style>
+    </noscript>
   </head>
   <body>
+    <nav class=menu-bar>
+      <div class=user-menu>
+        <% if current_user %>
+          <%= current_user.nick %>
+          <form class=user-menu-logout action='/logout' method=post>
+            <input type=submit value=logout>
+          </form>
+        <% else %>
+          <form class=user-menu-login action='/login' method=post>
+            <input type=email name=email placeholder=email>
+            <input type=password name=password placeholder=password>
+            <input type=submit class=user-menu-submit value='login or signup'>
+          </form>
+        <% end %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -1,6 +1,7 @@
 html, body {
   background: black;
   color: white;
+  margin: 0; margin-top: 12pt;
 }
 
 .posts, body > .post {
@@ -40,9 +41,6 @@ html, body {
 }
 
 .edit-post-content {
-  background: #222;
-  color: white;
-
   margin: 0; border: 0; padding: 0.5em;
   outline: none;
   width: 98%;
@@ -50,17 +48,55 @@ html, body {
   height: 1em;
 }
 
-.edit-post-submit {
+.edit-post-toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-post-toolbar > input + input {
+  margin-left: 0.5em;
+}
+
+input[type=submit] {
   border: none;
   -webkit-appearance: none;
 
-  display: block;
-  margin-left: auto;
   background: none;
   color: white;
 }
 
-.edit-post-submit:hover, .edit-post-submit:focus {
+input[type=submit]:hover, input[type=submit]:focus {
   background: red;
   outline: none;
+}
+
+input, textarea {
+  background: #222;
+  color: white;
+  border: 0;
+  padding: 0.5em;
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  font-size: 8pt;
+}
+
+.menu-bar {
+  position: fixed;
+  background: #202;
+  top: 0; right: 0; left: 0;
+  padding: 0.5em;
+
+  display: block;
+  font-size: 0;
+  z-index: 1000;
+}
+
+.user-menu {
+  text-align: right;
 }
