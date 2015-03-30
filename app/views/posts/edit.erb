@@ -15,10 +15,6 @@
     <% end %>
   ><%= post.try(:content) %></textarea>
   <div class=edit-post-toolbar>
-    <% unless current_user %>
-      <input type=email name=email placeholder=email>
-      <input type=password name=password placeholder=password>
-    <% end %>
     <input type=submit class=edit-post-submit value=<%= if parent then 'reply' else 'save' end %>>
   </div>
 </form>

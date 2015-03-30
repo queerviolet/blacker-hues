@@ -7,6 +7,8 @@
     <% post.children.order(:created_at).each do |post| %>
       <%= erb(:'posts/post', locals: {post: post}) %>
     <% end %>
-    <%= erb(:'posts/edit', locals: {parent: post, post: nil}) %>
+    <% if current_user %>
+      <%= erb(:'posts/edit', locals: {parent: post, post: nil}) %>
+    <% end %>
   </div>
 </div>
