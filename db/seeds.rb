@@ -4,13 +4,13 @@
     nick: 'Desdemona',
     name: 'Desdemona Cruel Heart',
     email: 'blackest.rose@gmail.com',
-    password: 'zzz',
+    password: 'xxx',
   },
   {
     nick: 'Charity',
     name: 'Charity Blood VonBlackwell',
     email: 'not.your.savior@deadjournal.com',
-    password: 'zzz',
+    password: 'yyy',
   },
   {
     nick: 'GotherThanYou42',
@@ -22,7 +22,7 @@
     nick: 'Raven',
     name: 'Raven NightWish',
     email: 'thieving.magpie@gmail.com',
-    password: 'zzz',
+    password: 'aaa',
   }
 ].each { |u| User.create!(u) }
 
